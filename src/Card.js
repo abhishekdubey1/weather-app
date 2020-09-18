@@ -1,6 +1,5 @@
-import React, { useState, useEffect } from "react";
-// import IconSetter from "./IconSetter";
-// import sun.svg from "./"
+import React from "react";
+
 function Card(props) {
   // let icon = IconSetter();
   let tempMax = !(props.weekdata.list === undefined) ? (
@@ -18,7 +17,6 @@ function Card(props) {
     "-"
   );
 
-  // console.log(props.weekdata, "WEEEEKDATA");
   return (
     <div className="col span_1_of_5" style={{ border: "1px solid black" }}>
       <h3 className="weekday">Fri</h3>

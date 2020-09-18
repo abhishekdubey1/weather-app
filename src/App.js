@@ -9,24 +9,23 @@ import Time from "./Time";
 
 function App() {
   const [temp, setTemp] = useState("");
-  const [city, setCity] = useState("London");
+  const [city, setCity] = useState("Mumbai");
   const [weekdata, setWeekdata] = useState("");
-  // useEffect(() => {
-  //   navigator.geolocation.getCurrentPosition(success, error);
-  // }, []);
-  // function success(position) {
-  //   fetch(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&
-  //   exclude=current&appid=ac0a6285171a5e78cc8abcdf306c373e`)
-  //     .then((res) => res.json())
-  //     .then((data) => setWeekdata(data));
-  //   console.log(position.coords.latitude, position.coords.longitude);
-  // }
-  // function error() {
-  //   console.log("ERRRRRRRRRRRRRROOOOOOOOOORR");
-  // }
-  // const tempstate = { list: "" };
-  // Rain
-  // if(navigator.geolocation)
+  useEffect(() => {
+    navigator.geolocation.getCurrentPosition(success, error);
+  }, []);
+  function success(position) {
+    fetch(`https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/onecall?lat=${position.coords.latitude}&lon=${position.coords.longitude}&
+    exclude=current&appid=ac0a6285171a5e78cc8abcdf306c373e`).then((res) =>
+      res.json()
+    );
+    // .then((data) => setWeekdata(data));
+    console.log(position.coords.latitude, position.coords.longitude);
+  }
+  function error() {
+    alert("Location not provided");
+  }
+
   useEffect(() => {
     fetch(
       `https://cors-anywhere.herokuapp.com/api.openweathermap.org/data/2.5/forecast?q=${city}&appid=ac0a6285171a5e78cc8abcdf306c373e`
@@ -54,8 +53,6 @@ function App() {
         <Card weekdata={weekdata} num={3} />
         <Card weekdata={weekdata} num={4} />
         <Card weekdata={weekdata} num={5} />
-        {/* <Card data={weekdata} num={1}/> */}
-        {/* <Card data={weekdata} num={2}/> */}
       </div>
 
       <div className="chart-container">
