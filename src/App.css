@@ -1,0 +1,144 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+.rain-icon {
+  width: 1rem;
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  margin: auto 0;
+  /* align-items: center; */
+  text-align: center;
+}
+/* .app {
+  color: white;
+  padding-top: 12%;
+} */
+
+ion-icon {
+  font-size: 3rem;
+  color: rgb(26, 91, 138);
+}
+
+.search-location-input {
+  display: flex;
+  width: 70%;
+  border-radius: 10px;
+  border: 1px solid #d8d8d8;
+}
+
+.search-location-input:focus-within {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  border-color: rgba(223, 225, 229, 0);
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+}
+
+.search-location-input:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+.search-location-input input {
+  height: 32px;
+  width: 100%;
+  padding: 8px 12px;
+  border: none;
+  font-size: 16px;
+  border-radius: 24px;
+}
+
+.search-location-input input:focus {
+  outline: none;
+}
+
+/*  SECTIONS  */
+.section {
+  clear: both;
+  padding: 0px;
+  margin: 0px;
+}
+
+/*  COLUMN SETUP  */
+.col {
+  display: block;
+  float: left;
+  margin: 1% 0 1% 1.7%;
+}
+.col:first-child {
+  margin-left: 0;
+}
+
+/*  GROUPING  */
+.group:before,
+.group:after {
+  content: "";
+  display: table;
+}
+.group:after {
+  clear: both;
+}
+.group {
+  zoom: 1; /* For IE 6/7 */
+}
+
+/*  GRID OF FIVE  */
+.span_5_of_5 {
+  width: 100%;
+}
+.span_4_of_5 {
+  width: 79.66%;
+}
+.span_3_of_5 {
+  width: 59.32%;
+}
+.span_2_of_5 {
+  width: 38.98%;
+}
+.span_1_of_5 {
+  width: 18.64%;
+}
+
+/*  GO FULL WIDTH BELOW 480 PIXELS */
+@media only screen and (max-width: 480px) {
+  .col {
+    margin: 1% 0 1% 0%;
+  }
+  .span_1_of_5,
+  .span_2_of_5,
+  .span_3_of_5,
+  .span_4_of_5,
+  .span_5_of_5 {
+    width: 100%;
+  }
+}
+.pressure,
+.humidity {
+  background-color: rgb(210, 210, 231);
+  opacity: 0.8;
+  color: black;
+  display: inline-block;
+  padding: 1rem;
+  margin: 1rem;
+  width: 20%;
+}
+.pressure-data,
+.humidity-data {
+  display: block;
+}
+.container {
+  margin: 0 auto;
+}
