@@ -18,10 +18,13 @@ function Card(props) {
   );
 
   return (
-    <div className="col span_1_of_5" style={{ border: "1px solid black" }}>
+    <div className="col span_1_of_5">
       <h3 className="weekday">Fri</h3>
-      <div className="max-temp">{tempMax} &#176;</div>
-      <div className="min-temp">{tempMin}&#176;</div>
+      <div className="max-temp">
+        <span>{tempMax} &#176;</span>
+        <span>{tempMin}&#176;</span>
+      </div>
+      <div className="min-temp"></div>
       <div className="weather">
         {props.weekdata ? (
           props.weekdata.list[props.num].weather[0].main === "Rain" ||

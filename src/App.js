@@ -47,7 +47,7 @@ function App() {
     <div className="container">
       <Search inputChanged={inputChanged} />
 
-      <div className="section group" style={{ border: "1px solid black" }}>
+      <div className="section group">
         <Card weekdata={weekdata} num={1} />
         <Card weekdata={weekdata} num={2} />
         <Card weekdata={weekdata} num={3} />
